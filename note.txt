@@ -1,0 +1,153 @@
+
+pip install gTTS  # Install on windows Powershell Administrator
+
+:: 1. PHP package to extract text from PDF via Poppler
+composer require spatie/pdf-to-text
+
+:: 2. Front-end icons and utility packages (if using Lucide icons)
+npm install lucide-react
+
+php artisan db:seed --class=PricingSeeder
+
+php artisan storage:link
+
+
+Create app/Http/Controllers/Concerns/AuthorizesRoles.php:
+-------------
+<?php
+
+namespace App\Http\Controllers\Concerns;
+
+use Illuminate\Http\Request;
+
+trait AuthorizesRoles
+{
+    /**
+     * Authorize user roles.
+     * Pass an array of allowed roles e.g. ['superadmin', 'admin'].
+     * Pass empty array [] or ['*'] to allow ALL authenticated roles.
+     */
+    protected function authorizeRole(Request $request, array $allowedRoles = []): void
+    {
+        $user = $request->user();
+
+        if (!$user) {
+            abort(401, 'Unauthenticated.');
+        }
+
+        // Allow all roles if $allowedRoles is empty or contains '*'
+        if (empty($allowedRoles) || in_array('*', $allowedRoles)) {
+            return;
+        }
+
+        if (!in_array($user->role, $allowedRoles)) {
+            abort(403, 'Unauthorized action. You do not have permission to access this resource.');
+        }
+    }
+}
+
+Controllers
+--------------
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Concerns\AuthorizesRoles;
+use Illuminate\Http\Request;
+
+class ServiceController extends Controller
+{
+    use AuthorizesRoles;
+
+    // Accessible by ALL authenticated roles (superadmin, admin, manager, cashier)
+    public function index(Request $request)
+    {
+        $this->authorizeRole($request, []); // or ['*']
+
+        return Inertia::render('Services');
+    }
+
+    // Accessible ONLY by superadmin and admin
+    public function destroy(Request $request, $id)
+    {
+        $this->authorizeRole($request, ['superadmin', 'admin']);
+
+        // Delete logic...
+    }
+}
+
+HandleInertiaRequests.php:
+--------------------------
+public function share(Request $request): array
+{
+    return [
+        ...parent::share($request),
+        'auth' => [
+            'user' => $request->user() ? [
+                'id' => $request->user()->id,
+                'name' => $request->user()->name,
+                'email' => $request->user()->email,
+                'role' => $request->user()->role,
+            ] : null,
+        ],
+    ];
+}
+
+resources/js/Components/Can.tsx
+-------------------------------
+import { usePage } from '@inertiajs/react';
+import { ReactNode } from 'react';
+
+interface CanProps {
+    roles?: string[]; // e.g. ['superadmin', 'admin'] or ['*']
+    children: ReactNode;
+}
+
+export default function Can({ roles = [], children }: CanProps) {
+    const { auth } = usePage().props as any;
+    const userRole = auth?.user?.role;
+
+    // If no user is logged in, hide protected elements
+    if (!userRole) {
+        return null;
+    }
+
+    // If roles is empty or includes '*', show element to all logged-in roles
+    if (roles.length === 0 || roles.includes('*')) {
+        return <>{children}</>;
+    }
+
+    // Check specific role match
+    if (!roles.includes(userRole)) {
+        return null;
+    }
+
+    return <>{children}</>;
+}
+
+React JSX
+---------
+import Can from '@/Components/Can';
+
+export default function NavigationMenu() {
+    return (
+        <nav className="flex gap-4">
+            {/* Visible to ALL roles (superadmin, admin, manager, cashier) */}
+            <Can roles={['*']}>
+                <a href="/dashboard">Dashboard</a>
+                <a href="/bookings">View Bookings</a>
+            </Can>
+
+            {/* Visible to Superadmin, Admin, and Manager */}
+            <Can roles={['superadmin', 'admin', 'manager']}>
+                <a href="/bookings/create">Create Booking</a>
+            </Can>
+
+            {/* Visible ONLY to Superadmin and Admin */}
+            <Can roles={['superadmin', 'admin']}>
+                <a href="/admin/reports">Financial Reports</a>
+                <a href="/admin/users">Manage Users</a>
+            </Can>
+        </nav>
+    );
+}

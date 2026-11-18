@@ -1,0 +1,230 @@
+import {
+    MapPin,
+    Phone,
+    Mail,
+    Clock,
+    MessageCircle,
+    Navigation,
+    Building2,
+} from "lucide-react";
+import React from "react";
+import MainLayout from "@/layouts/main-layout";
+import SEO from "@/components/nav/seo";
+import PageHero from "@/components/nav/PageHero";
+
+export default function ContactPage() {
+    // Configuration details
+    const contactInfo = {
+        companyName: "MFM Pastor Blessing",
+        address:
+            "Open Ground By Onike Market Andoyi Street, Onike, Yaba, Lagos",
+        phone: "+2347033330882",
+        whatsapp: "2347033330882",
+        email: "support@pastorblessing.com",
+        hours: [{ days: "Monday – Sunday", time: "8:00 AM – 6:00 PM" }],
+        // Embed URL for Google Maps
+        mapEmbedUrl:
+            "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d31712.48790091987!2d3.369125042382896!3d6.51396518683262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sMFM%20open%20ground%20by%20onike%20market%20andoyi%20street%20onike%20yaba%20lagos!5e0!3m2!1sen!2sng!4v1795000542621!5m2!1sen!2sng",
+        googleMapsDirectionsUrl:
+            "https://maps.google.com/?q=MFM+20open+ground+by+onike+market+andoyi+street+onike+yaba+lagos",
+    };
+
+    return (
+        <MainLayout
+            title="Contact Us"
+            description="Explore our range of travel solutions including flight bookings, hotel reservations, and visa consultations."
+        >
+            <PageHero
+                badge="Contact Us"
+                title="Get In Touch With Us"
+                subtitle="Get in touch with our team for inquiries, support, or to explore our services. We're here to assist you on your journey."
+            />
+
+            <div className="flex min-h-screen flex-col justify-between bg-slate-50">
+                {/* Top Container: Info Cards */}
+                <div className="px-4 py-12 sm:px-6 lg:px-8">
+                    <div className="mx-auto max-w-7xl space-y-10">
+                        {/* Header */}
+                        <div className="mx-auto max-w-2xl space-y-3 text-center">
+                            <span className="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 ring-1 ring-indigo-700/10 ring-inset">
+                                Get In Touch
+                            </span>
+                            <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+                                Contact Our Team
+                            </h1>
+                            <p className="text-sm text-slate-600 sm:text-base">
+                                Have questions or need assistance? Reach out to
+                                us through any of our channels or visit our
+                                office.
+                            </p>
+                        </div>
+
+                        {/* 3-Column Info Cards */}
+                        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+                            {/* Office Location */}
+                            <div className="flex flex-col justify-between space-y-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                                <div className="space-y-4">
+                                    <div className="flex items-center gap-3">
+                                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+                                            <Building2 className="h-5 w-5" />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-base font-semibold text-slate-900">
+                                                Headquarters
+                                            </h3>
+                                            <p className="text-xs text-slate-500">
+                                                {contactInfo.companyName}
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-1.5 text-sm text-slate-600">
+                                        <div className="flex items-start gap-2">
+                                            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
+                                            <div>
+                                                <p>{contactInfo.address}</p>
+                                                {/* <p>{contactInfo.cityState}</p> */}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a
+                                    href={contactInfo.googleMapsDirectionsUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-slate-900"
+                                >
+                                    <Navigation className="h-4 w-4 text-indigo-600" />
+                                    Get Directions
+                                </a>
+                            </div>
+
+                            {/* Communication Channels */}
+                            <div className="space-y-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                                <h3 className="border-b border-slate-100 pb-3 text-base font-semibold text-slate-900">
+                                    Direct Communication
+                                </h3>
+
+                                <div className="space-y-2.5">
+                                    <a
+                                        href={`tel:${contactInfo.phone.replace(/\s+/g, "")}`}
+                                        className="flex items-center justify-between rounded-xl border border-slate-100 p-2.5 text-sm transition hover:border-indigo-200 hover:bg-indigo-50/30"
+                                    >
+                                        <div className="flex items-center gap-3">
+                                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
+                                                <Phone className="h-4 w-4" />
+                                            </div>
+                                            <div>
+                                                <p className="text-[11px] font-medium text-slate-500">
+                                                    Phone
+                                                </p>
+                                                <p className="text-xs font-semibold text-slate-800">
+                                                    {contactInfo.phone}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <span className="text-xs font-semibold text-indigo-600">
+                                            Call
+                                        </span>
+                                    </a>
+
+                                    <a
+                                        href={`https://wa.me/${contactInfo.whatsapp}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center justify-between rounded-xl border border-slate-100 p-2.5 text-sm transition hover:border-emerald-200 hover:bg-emerald-50/30"
+                                    >
+                                        <div className="flex items-center gap-3">
+                                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
+                                                <MessageCircle className="h-4 w-4" />
+                                            </div>
+                                            <div>
+                                                <p className="text-[11px] font-medium text-slate-500">
+                                                    WhatsApp
+                                                </p>
+                                                <p className="text-xs font-semibold text-slate-800">
+                                                    Instant Chat
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <span className="text-xs font-semibold text-emerald-600">
+                                            Message
+                                        </span>
+                                    </a>
+
+                                    <a
+                                        href={`mailto:${contactInfo.email}`}
+                                        className="flex items-center justify-between rounded-xl border border-slate-100 p-2.5 text-sm transition hover:border-indigo-200 hover:bg-indigo-50/30"
+                                    >
+                                        <div className="flex items-center gap-3">
+                                            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
+                                                <Mail className="h-4 w-4" />
+                                            </div>
+                                            <div>
+                                                <p className="text-[11px] font-medium text-slate-500">
+                                                    Email Support
+                                                </p>
+                                                <p className="text-xs font-semibold break-all text-slate-800">
+                                                    {contactInfo.email}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <span className="text-xs font-semibold text-indigo-600">
+                                            Send
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            {/* Business Hours */}
+                            <div className="space-y-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                                <div className="flex items-center gap-3 border-b border-slate-100 pb-3">
+                                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50 text-amber-600">
+                                        <Clock className="h-5 w-5" />
+                                    </div>
+                                    <h3 className="text-base font-semibold text-slate-900">
+                                        Business Hours
+                                    </h3>
+                                </div>
+
+                                <div className="divide-y divide-slate-100 text-xs sm:text-sm">
+                                    {contactInfo.hours.map((schedule, idx) => (
+                                        <div
+                                            key={idx}
+                                            className="flex items-center justify-between py-2"
+                                        >
+                                            <span className="font-medium text-slate-600">
+                                                {schedule.days}
+                                            </span>
+                                            <span className="font-semibold text-slate-900">
+                                                {schedule.time}
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Bottom Full-Width Google Map Section */}
+                <div className="relative h-[450px] w-full border-t border-slate-200 bg-slate-200 lg:h-[550px]">
+                    <iframe
+                        title="Office Location Map"
+                        src={contactInfo.mapEmbedUrl}
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        className="h-full w-full grayscale-[20%] transition-all duration-300 hover:grayscale-0"
+                    />
+
+                    {/* <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3980.855579803723!2d11.48597382310251!3d3.8411636985130153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sCarrefou%20Acacias%2C%20Yaounde%2C%20Cameroon!5e0!3m2!1sen!2sng!4v1794648284254!5m2!1sen!2sng" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe> */}
+                </div>
+            </div>
+        </MainLayout>
+    );
+}
