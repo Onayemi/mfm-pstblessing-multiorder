@@ -125,7 +125,7 @@ export default function ImageCarouselSlider() {
                 <div className="flex justify-between items-end">
                     <div>
                         <span className="text-xs font-bold uppercase tracking-widest text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full border border-amber-400/20">
-                            Father Blessing Children Games Play
+                            MFM Pastor Blessing Children Games Play
                         </span>
                         <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-2">
                             Explore Our Game Gallery

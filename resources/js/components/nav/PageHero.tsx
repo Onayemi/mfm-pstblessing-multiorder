@@ -15,7 +15,7 @@ export default function PageHero({ title, subtitle, badge }: PageHeroProps) {
                         {badge}
                     </span>
                 )}
-                <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
+                <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
                     {title}
                 </h1>
                 <p className="text-slate-200 text-lg font-light max-w-2xl mx-auto">

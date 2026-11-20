@@ -51,12 +51,12 @@ export default function AuthSplitLayout({
                         <h2 className="text-3xl leading-tight font-extrabold text-white xl:text-4xl">
                             Playground
                         </h2>
-                        <p className="text-sm leading-relaxed text-slate-400">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Soluta dicta modi a necessitatibus architecto
-                            facere ex deserunt eligendi suscipit quasi rerum
-                            tempora itaque amet maxime, harum, omnis officia
-                            mollitia quibusdam?
+                        <p className="text-sm leading-relaxed text-white">
+                            Be part of the MFM Pastor Blessing Programme, a
+                            special gathering dedicated to prayer, worship,
+                            divine favour, and supernatural breakthroughs. Come
+                            expecting God's touch, abundant blessings, and a
+                            fresh encounter with His power.
                         </p>
                     </div>
                 </div>

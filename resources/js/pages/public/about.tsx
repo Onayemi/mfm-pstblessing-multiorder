@@ -17,7 +17,7 @@ export default function About() {
         >
             <PageHero
                 badge="About MFM Pastor Blessing"
-                title="Connecting You to the Scenery of the World"
+                title="Experience Divine Blessings at Pastor Blessing Programme"
                 subtitle="MFM Pastor Blessing "
             />
 
@@ -43,11 +43,18 @@ export default function About() {
                             Our Story
                         </span>
                         <h2 className="text-3xl font-bold text-slate-900 leading-snug">
-                            Inspired by Legendary Explorers, Built for Modern
-                            Journeys
+                            Experience Divine Blessings at Pastor Blessing
+                            Programme
                         </h2>
                         <p className="text-slate-600 text-sm leading-relaxed">
-                            Information about Pastor Blessing
+                            Join us for a powerful and spirit-filled Pastor
+                            Blessing Programme at Mountain of Fire and Miracles
+                            Ministries (MFM). It is a special time of prayer,
+                            worship, prophetic declarations, and divine
+                            encounters as we seek God's face for fresh
+                            blessings, supernatural breakthroughs, restoration,
+                            and divine favour. Come with an expectant heart and
+                            experience the transforming power of God.
                         </p>
                     </div>
                     <div className="relative">

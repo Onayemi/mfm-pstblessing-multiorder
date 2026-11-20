@@ -130,55 +130,55 @@ export default function ReportsIndex({ bookings, summary, filters }: Props) {
                                 {formatNaira(summary.total_revenue)}
                             </p>
                         </div>
+                        <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
+                            <p className="text-[11px] font-bold uppercase text-slate-400">
+                                Group Tickets
+                            </p>
+                            <p className="text-xl font-extrabold text-slate-900 mt-1">
+                                {summary.total_bookings}
+                            </p>
+                        </div>
+                        <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
+                            <p className="text-[11px] font-bold uppercase text-slate-400">
+                                Total Guests
+                            </p>
+                            <p className="text-xl font-extrabold text-indigo-600 mt-1">
+                                {summary.total_headcount}
+                            </p>
+                        </div>
+                        <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
+                            <p className="text-[11px] font-bold uppercase text-slate-400">
+                                Adults
+                            </p>
+                            <p className="text-xl font-extrabold text-red-600 mt-1">
+                                {summary.adult_count}
+                            </p>
+                        </div>
+                        <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
+                            <p className="text-[11px] font-bold uppercase text-slate-400">
+                                Teenagers
+                            </p>
+                            <p className="text-xl font-extrabold text-blue-600 mt-1">
+                                {summary.teenage_count}
+                            </p>
+                        </div>
+                        <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
+                            <p className="text-[11px] font-bold uppercase text-slate-400">
+                                Children
+                            </p>
+                            <p className="text-xl font-extrabold text-amber-600 mt-1">
+                                {summary.children_count}
+                            </p>
+                        </div>
+                        <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
+                            <p className="text-[11px] font-bold uppercase text-slate-400">
+                                Game Passes
+                            </p>
+                            <p className="text-xl font-extrabold text-purple-600 mt-1">
+                                {summary.game_count}
+                            </p>
+                        </div>
                     </Can>
-                    <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
-                        <p className="text-[11px] font-bold uppercase text-slate-400">
-                            Group Tickets
-                        </p>
-                        <p className="text-xl font-extrabold text-slate-900 mt-1">
-                            {summary.total_bookings}
-                        </p>
-                    </div>
-                    <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
-                        <p className="text-[11px] font-bold uppercase text-slate-400">
-                            Total Guests
-                        </p>
-                        <p className="text-xl font-extrabold text-indigo-600 mt-1">
-                            {summary.total_headcount}
-                        </p>
-                    </div>
-                    <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
-                        <p className="text-[11px] font-bold uppercase text-slate-400">
-                            Adults
-                        </p>
-                        <p className="text-xl font-extrabold text-red-600 mt-1">
-                            {summary.adult_count}
-                        </p>
-                    </div>
-                    <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
-                        <p className="text-[11px] font-bold uppercase text-slate-400">
-                            Teenagers
-                        </p>
-                        <p className="text-xl font-extrabold text-blue-600 mt-1">
-                            {summary.teenage_count}
-                        </p>
-                    </div>
-                    <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
-                        <p className="text-[11px] font-bold uppercase text-slate-400">
-                            Children
-                        </p>
-                        <p className="text-xl font-extrabold text-amber-600 mt-1">
-                            {summary.children_count}
-                        </p>
-                    </div>
-                    <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-200">
-                        <p className="text-[11px] font-bold uppercase text-slate-400">
-                            Game Passes
-                        </p>
-                        <p className="text-xl font-extrabold text-purple-600 mt-1">
-                            {summary.game_count}
-                        </p>
-                    </div>
                 </div>
 
                 {/* Advanced Filters */}

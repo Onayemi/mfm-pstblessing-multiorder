@@ -5,7 +5,7 @@ import MainLayout from "@/layouts/main-layout";
 const bannerSlides = [
     {
         id: 1,
-        image: "/images/banners/banner1.png",
+        image: "/images/banners/banner1.jpg",
         // image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80",
         // title: "Build Modern Apps with Laravel & React",
         // subtitle:
@@ -21,10 +21,10 @@ const bannerSlides = [
         id: 3,
         image: "/images/banners/banner3.jpg",
     },
-    {
-        id: 4,
-        image: "/images/banners/banner4.png",
-    },
+    // {
+    //     id: 4,
+    //     image: "/images/banners/banner4.png",
+    // },
 ];
 
 export default function Welcome() {

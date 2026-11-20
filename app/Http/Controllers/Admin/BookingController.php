@@ -41,7 +41,7 @@ class BookingController extends Controller
             $query->whereDate('booked_at', $request->input('date'));
         }
 
-        $bookings = $query->latest('booked_at')->paginate(20)->withQueryString();
+        $bookings = $query->latest('booked_at')->paginate(25)->withQueryString();
 
         return Inertia::render('admin/Booking/Index', [
             'bookings' => $bookings,

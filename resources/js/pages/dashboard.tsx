@@ -157,23 +157,23 @@ export default function XmasDashboard({
                                 {formatNaira(metrics.total_revenue)}
                             </p>
                         </div>
+                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                                Transactions / Groups
+                            </p>
+                            <p className="text-2xl font-extrabold text-red-600 mt-2">
+                                {metrics.total_tickets}
+                            </p>
+                        </div>
+                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                            <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                                Total Game Passes
+                            </p>
+                            <p className="text-2xl font-extrabold text-purple-600 mt-2">
+                                {metrics.game_pass_count}
+                            </p>
+                        </div>
                     </Can>
-                    <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                        <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
-                            Transactions / Groups
-                        </p>
-                        <p className="text-2xl font-extrabold text-red-600 mt-2">
-                            {metrics.total_tickets}
-                        </p>
-                    </div>
-                    <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                        <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
-                            Total Game Passes
-                        </p>
-                        <p className="text-2xl font-extrabold text-purple-600 mt-2">
-                            {metrics.game_pass_count}
-                        </p>
-                    </div>
                 </div>
 
                 {/* Charts Grid */}
