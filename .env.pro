@@ -2,7 +2,7 @@ APP_NAME="MFM Pastor Blessing"
 APP_ENV=production
 APP_KEY=base64:S2U7T2XU1MH6fOX0+o5fCwQZsEYOzh6KOlyP6oqcyKk=
 APP_DEBUG=false
-APP_URL=https://pastorblessing.remlextech.com
+APP_URL=https://mfmpastorblessing.com
 
 APP_LOCALE=en
 APP_FALLBACK_LOCALE=en
@@ -23,8 +23,8 @@ LOG_LEVEL=debug
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE="remlexte_pstblessing"
-DB_USERNAME=remlexte_pstblessinguser
+DB_DATABASE="mfmpasto_pstblessing"
+DB_USERNAME=mfmpasto_pstblessinguser
 DB_PASSWORD="#1PstBlessing2026@"
 
 SESSION_DRIVER=database
