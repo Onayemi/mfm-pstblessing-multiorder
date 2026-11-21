@@ -1,5 +1,5 @@
 import { Calendar } from "lucide-react";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 // Reusable menu items configuration
 interface NavItem {
@@ -14,7 +14,7 @@ const NAV_ITEMS: NavItem[] = [
     { label: "Contact", href: "/contact" },
 ];
 
-// 4 Social icons configuration (Facebook, Twitter/X, Instagram, LinkedIn)
+// Social icons configuration
 const SOCIAL_ICONS = [
     {
         name: "Facebook",
@@ -71,7 +71,7 @@ export default function Navbar() {
                             <img
                                 src="/images/logo2.png"
                                 alt="PromiseLand Travel Int'l"
-                                className="w-full h-12 object-cover group-hover:scale-105 transition duration-500 ease-out"
+                                className="w-full h-10 object-cover group-hover:scale-105 transition duration-500 ease-out"
                             />
                         </a>
                     </div>
@@ -178,16 +178,16 @@ export default function Navbar() {
                         </a>
                     </div>
 
-                    {/* Right Side: Mobile Hamburger Icon */}
-
+                    {/* Right Side: Small Orange Mobile Hamburger Button */}
                     <div className="md:hidden flex items-center">
                         <button
+                            type="button"
                             onClick={() => setIsMobileMenuOpen(true)}
                             aria-label="Open Menu"
-                            className="p-1 rounded-lg focus:outline-none"
+                            className="p-1.5 rounded-md bg-orange-500 hover:bg-orange-600 active:scale-95 text-white shadow-sm transition focus:outline-none focus:ring-2 focus:ring-orange-300"
                         >
                             <svg
-                                className="w-6 h-6 text-gray-300"
+                                className="w-4 h-4"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
@@ -195,7 +195,7 @@ export default function Navbar() {
                                 <path
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
-                                    strokeWidth={2}
+                                    strokeWidth={2.2}
                                     d="M4 6h16M4 12h16M4 18h16"
                                 />
                             </svg>
@@ -214,7 +214,7 @@ export default function Navbar() {
                 onClick={() => setIsMobileMenuOpen(false)}
             />
 
-            {/* Mobile Sheet Drawer (Black Background with White Text) */}
+            {/* Mobile Sheet Drawer */}
             <aside
                 className={`fixed top-0 right-0 w-[260px] h-full bg-red-600 text-white z-50 shadow-2xl transition-transform duration-300 ease-in-out md:hidden flex flex-col justify-between border-l border-neutral-800 ${
                     isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
@@ -231,6 +231,7 @@ export default function Navbar() {
                             />
                         </span>
                         <button
+                            type="button"
                             onClick={() => setIsMobileMenuOpen(false)}
                             aria-label="Close Menu"
                             className="text-neutral-400 hover:text-white p-1 text-xl font-bold"
@@ -239,12 +240,13 @@ export default function Navbar() {
                         </button>
                     </div>
 
-                    {/* Reusable Mobile Navigation Links with Reduced Gap */}
+                    {/* Reusable Mobile Navigation Links */}
                     <nav className="mt-4 flex flex-col gap-1.5 text-sm font-medium">
                         {NAV_ITEMS.map((item) =>
                             item.submenu ? (
                                 <div key={item.label}>
                                     <button
+                                        type="button"
                                         onClick={() =>
                                             setIsMobileServicesOpen(
                                                 !isMobileServicesOpen,
@@ -272,7 +274,7 @@ export default function Navbar() {
                                         </svg>
                                     </button>
 
-                                    {/* Submenu with Tight Spacing */}
+                                    {/* Submenu */}
                                     {isMobileServicesOpen && (
                                         <div className="pl-3 my-1 border-l border-neutral-800 flex flex-col gap-1 text-xs text-neutral-400">
                                             {item.submenu.map((sub) => (
