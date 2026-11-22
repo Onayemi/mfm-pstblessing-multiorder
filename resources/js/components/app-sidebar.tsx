@@ -4,8 +4,8 @@ import {
     Calendar,
     UserPlus,
     BarChart3,
-    // FolderGit2,
-    // BookOpen,
+    FolderGit2,
+    BookOpen,
 } from "lucide-react";
 import AppLogo from "@/components/app-logo";
 // import { NavFooter } from "@/components/nav-footer";

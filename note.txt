@@ -11,6 +11,14 @@ php artisan db:seed --class=PricingSeeder
 
 php artisan storage:link
 
+Build file to remove hot file
+-------------
+Cross-Platform package.json (Works on Windows, Mac, and Linux)
+"build": "node -e \"require('fs').rmSync('public/hot', { force: true })\" && vp build",
+or
+Linux / Mac / Git Bash Only
+"build": "rm -f public/hot && vp build"
+
 
 Create app/Http/Controllers/Concerns/AuthorizesRoles.php:
 -------------

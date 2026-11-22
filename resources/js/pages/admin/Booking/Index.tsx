@@ -494,6 +494,10 @@ export default function Index({ bookings, metrics, filters, flash }: Props) {
                                         </span>
                                     </div>
                                     <p className="text-[12px] text-slate-600 mt-1 leading-snug">
+                                        Date: 6th - 29th, Dec 2026; Time: 8:00am
+                                        Daily
+                                    </p>
+                                    <p className="text-[12px] text-slate-600 mt-1 leading-snug">
                                         Venue: Open Grounds By Onike Market
                                         Andoyi Street, Onike, Yaba, Lagos
                                     </p>
