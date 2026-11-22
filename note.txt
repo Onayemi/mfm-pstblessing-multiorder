@@ -11,7 +11,7 @@ php artisan db:seed --class=PricingSeeder
 
 php artisan storage:link
 
-Build file to remove hot file
+Build file to remove hot file from public
 -------------
 Cross-Platform package.json (Works on Windows, Mac, and Linux)
 "build": "node -e \"require('fs').rmSync('public/hot', { force: true })\" && vp build",
